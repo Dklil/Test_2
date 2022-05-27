@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AIS_Driving_School_Driver_
 {
-    public partial class Form1 : Form
+    public partial class Guide_Curators : Form
     {
-        public Form1()
+        public Guide_Curators()
         {
             InitializeComponent();
         }

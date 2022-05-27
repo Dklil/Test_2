@@ -94,20 +94,20 @@ namespace AIS_Driving_School_Driver_
                 dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+               
 
                 // Заполняет пустую ширину датагрида
                 dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+              
 
                 // Уберает заголовки в датагриде
                 dataGridView2.RowHeadersVisible = false;
 
-                dataGridView2.Columns[1].HeaderText = "Наименование";
-                dataGridView2.Columns[2].HeaderText = "Количество";
-                dataGridView2.Columns[3].HeaderText = "Категория";
-                dataGridView2.Columns[4].HeaderText = "Преподаватель";
-                dataGridView2.Columns[5].HeaderText = "Куратор";
+               
+                dataGridView2.Columns[1].HeaderText = "Количество";
+                dataGridView2.Columns[2].HeaderText = "Категория";
+                dataGridView2.Columns[3].HeaderText = "Преподаватель";
+                dataGridView2.Columns[4].HeaderText = "Куратор";
             }
 
 

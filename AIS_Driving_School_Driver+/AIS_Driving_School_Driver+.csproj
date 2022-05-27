@@ -32,7 +32,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\Desktop\Стоит сохранить\Папки + Папка Разное\Коннектор MySQL для C# (2)\Коннектор MySQL для C#\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,26 +53,199 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Add_Schedule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\Add_Schedule.Designer.cs">
+      <DependentUpon>Add_Schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add_Weekly_schedule_Sumonova_Elizoveta_Petrovna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_Weekly_schedule_Sumonova_Elizoveta_Petrovna.Designer.cs">
+      <DependentUpon>Add_Weekly_schedule_Sumonova_Elizoveta_Petrovna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Change_Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Change_Schedule.Designer.cs">
+      <DependentUpon>Change_Schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Curators.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Curators.Designer.cs">
+      <DependentUpon>Curators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Curators_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Curators_Add.Designer.cs">
+      <DependentUpon>Curators_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Curators_Change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Curators_Change.Designer.cs">
+      <DependentUpon>Curators_Change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Guide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Guide.Designer.cs">
+      <DependentUpon>Guide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Guide_Curators.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Guide_Curators.Designer.cs">
+      <DependentUpon>Guide_Curators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Guide_Groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Guide_Groups.Designer.cs">
+      <DependentUpon>Guide_Groups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Schedule_by_teachers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Schedule_by_teachers.Designer.cs">
+      <DependentUpon>Schedule_by_teachers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Schedule.Designer.cs">
+      <DependentUpon>Schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Groups.Designer.cs">
+      <DependentUpon>Groups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Groups_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Groups_Add.Designer.cs">
+      <DependentUpon>Groups_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Group_Change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Group_Change.Designer.cs">
+      <DependentUpon>Group_Change.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\Teacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Teacher.Designer.cs">
+      <DependentUpon>Teacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Teacher_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Teacher_Add.Designer.cs">
+      <DependentUpon>Teacher_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Teacher_Change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Teacher_Change.Designer.cs">
+      <DependentUpon>Teacher_Change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transition_from_staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Transition_from_staff.Designer.cs">
+      <DependentUpon>Transition_from_staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Users_Role.cs" />
+    <Compile Include="Forms\Add_Weekly_schedule_Ivanova_Maui_Nikitigna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_Weekly_schedule_Ivanova_Maui_Nikitigna.Designer.cs">
+      <DependentUpon>Add_Weekly_schedule_Ivanova_Maui_Nikitigna.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Add_Schedule.resx">
+      <DependentUpon>Add_Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_Weekly_schedule_Ivanova_Maui_Nikitigna.resx">
+      <DependentUpon>Add_Weekly_schedule_Ivanova_Maui_Nikitigna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_Weekly_schedule_Sumonova_Elizoveta_Petrovna.resx">
+      <DependentUpon>Add_Weekly_schedule_Sumonova_Elizoveta_Petrovna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Change_Schedule.resx">
+      <DependentUpon>Change_Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Curators.resx">
+      <DependentUpon>Curators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Curators_Add.resx">
+      <DependentUpon>Curators_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Curators_Change.resx">
+      <DependentUpon>Curators_Change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Guide.resx">
+      <DependentUpon>Guide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Guide_Curators.resx">
+      <DependentUpon>Guide_Curators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Guide_Groups.resx">
+      <DependentUpon>Guide_Groups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Schedule_by_teachers.resx">
+      <DependentUpon>Schedule_by_teachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Schedule.resx">
+      <DependentUpon>Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Groups.resx">
+      <DependentUpon>Groups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Groups_Add.resx">
+      <DependentUpon>Groups_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Group_Change.resx">
+      <DependentUpon>Group_Change.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Forms\Teacher.resx">
+      <DependentUpon>Teacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Teacher_Add.resx">
+      <DependentUpon>Teacher_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Teacher_Change.resx">
+      <DependentUpon>Teacher_Change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Transition_from_staff.resx">
+      <DependentUpon>Transition_from_staff.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,5 +259,27 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule_teachers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Groups.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Curators.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teachers.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

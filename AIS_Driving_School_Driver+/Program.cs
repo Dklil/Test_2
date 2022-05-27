@@ -6,6 +6,17 @@ using System.Windows.Forms;
 
 namespace AIS_Driving_School_Driver_
 {
+
+    static class tea
+    {
+        public static int id { get; set; }
+    }
+
+    static class lell
+    {
+        public static int id { get; set; }
+    }
+
     internal static class Program
     {
         /// <summary>
@@ -16,7 +27,7 @@ namespace AIS_Driving_School_Driver_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Authorization());
         }
     }
 }
