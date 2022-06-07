@@ -23,7 +23,7 @@ namespace AIS_Driving_School_Driver_
         {
             MySqlConnection conn = new MySqlConnection("server=chuc.caseum.ru;user=st_2_18_4;database=is_2_18_st4_VKR;password =75855345;port =33333");
 
-            public void GetList(TextBox textBox1, ComboBox comboBox1, ComboBox comboBox2, ComboBox comboBox3,TextBox textBox4, TextBox textBox5, TextBox textBox6)
+            public void GetList(TextBox textBox1, ComboBox comboBox2, ComboBox comboBox3,TextBox textBox4, TextBox textBox5, TextBox textBox6)
             {
                
                 string sql = "SELECT * FROM Teachers WHERE id =" + lell.id;
@@ -34,23 +34,22 @@ namespace AIS_Driving_School_Driver_
                 while (reader_list.Read())
                 {
                     textBox1.Text = (reader_list[1].ToString());
-                    comboBox1.Text = (reader_list[2].ToString());
-                    comboBox2.Text = (reader_list[3].ToString());
-                    comboBox3.Text = (reader_list[4].ToString());
-                    textBox4.Text = (reader_list[5].ToString());
-                    textBox5.Text = (reader_list[6].ToString());
-                    textBox6.Text = (reader_list[7].ToString());
+                    comboBox2.Text = (reader_list[2].ToString());
+                    comboBox3.Text = (reader_list[3].ToString());
+                    textBox4.Text = (reader_list[4].ToString());
+                    textBox5.Text = (reader_list[5].ToString());
+                    textBox6.Text = (reader_list[6].ToString());
                 }
                 reader_list.Close();
                 conn.Close();
 
             }
 
-            public void CName(TextBox textBox1, ComboBox comboBox1, ComboBox comboBox2, ComboBox comboBox3,TextBox textBox4, TextBox textBox5, TextBox textBox6)
+            public void CName(TextBox textBox1, ComboBox comboBox2, ComboBox comboBox3,TextBox textBox4, TextBox textBox5, TextBox textBox6)
             {
                 string connStr = "server = chuc.caseum.ru; user = st_2_18_4; database = is_2_18_st4_VKR; password = 75855345; port = 33333";
                 MySqlConnection conn = new MySqlConnection(connStr);
-                string sql = "UPDATE Teachers SET FIO = '" + textBox1.Text + "', Curators = '" + comboBox1.Text + "', Grupa = '" + comboBox2.Text + "', Car = '" + comboBox3.Text + "', Adres = '" + textBox4.Text + "', Phone = '" + textBox5.Text + "', Mail= '" + textBox6.Text + "' WHERE id =  " + lell.id;
+                string sql = "UPDATE Teachers SET FIO = '" + textBox1.Text + "', Grups = '" + comboBox2.Text + "', Car = '" + comboBox3.Text + "', Adres = '" + textBox4.Text + "', Phone = '" + textBox5.Text + "', Mail= '" + textBox6.Text + "' WHERE id =  " + lell.id;
 
                 MySqlCommand comm = new MySqlCommand(sql, conn);
                 conn.Open();
@@ -71,80 +70,7 @@ namespace AIS_Driving_School_Driver_
 
             }
 
-            // Заполнение combobox1 куратор
-            public void GetComboBoxList1(ComboBox comboBox1)
-            {
-                //Формирование списка статусов
-                DataTable list_dolg_table = new DataTable();
-
-                MySqlCommand list_dolg_command = new MySqlCommand();
-
-                //Открываем соединение
-                conn.Open();
-                //Формируем столбцы для комбобокса списка 
-
-                list_dolg_table.Columns.Add(new DataColumn("FIO", System.Type.GetType("System.String")));
-                //Настройка видимости полей комбобокса
-
-                comboBox1.DataSource = list_dolg_table;
-
-                comboBox1.ValueMember = "FIO";
-
-                //Формируется строка запроса на отображение списка 
-                string sql_list_users = "SELECT FIO FROM Curators";
-                list_dolg_command.CommandText = sql_list_users;
-                list_dolg_command.Connection = conn;
-
-
-                MySqlDataReader reader_list_FIO;
-                try
-                {
-                    reader_list_FIO = list_dolg_command.ExecuteReader();
-
-                    while (reader_list_FIO.Read())
-                    {
-                        DataRow rowToAdd = list_dolg_table.NewRow();
-
-                        rowToAdd["FIO"] = reader_list_FIO[0].ToString();
-                        list_dolg_table.Rows.Add(rowToAdd);
-                    }
-                    reader_list_FIO.Close();
-                    conn.Close();
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ошибка \n\n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Application.Exit();
-                }
-                finally
-                {
-                    conn.Close();
-                }
-            }
-
-            // Заполнение combobox1 куратор
-            public void GetList1(string id_cp, Label label9)
-            {
-                //Открываем соединение
-                conn.Open();
-                //Строка запроса
-                string commandStr = "SELECT * FROM Curators FIO";
-                //Команда для получения списка
-                MySqlCommand cmd_get_list = new MySqlCommand(commandStr, conn);
-                //Ридер для хранения списка строк
-                MySqlDataReader reader_list = cmd_get_list.ExecuteReader();
-                //Чтение ридера
-
-                while (reader_list.Read())
-                {
-                    label9.Text.Length.ToString(" " + reader_list[0].ToString());
-                }
-                reader_list.Close();
-                conn.Close();
-            }
-
-
+            
             // Заполнение combobox2 группа
             public void GetComboBoxList2(ComboBox comboBox2)
             {
@@ -294,15 +220,14 @@ namespace AIS_Driving_School_Driver_
 
         private void Teacher_Change_Load(object sender, EventArgs e)
         {
-            change.GetList(textBox1, comboBox1, comboBox2, comboBox3,textBox4, textBox5, textBox6);
-            change.GetComboBoxList1(comboBox1);
+            change.GetList(textBox1, comboBox2, comboBox3,textBox4, textBox5, textBox6);
             change.GetComboBoxList2(comboBox2);
             change.GetComboBoxList3(comboBox3);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            change.CName(textBox1, comboBox1, comboBox2, comboBox3,textBox4, textBox5, textBox6);
+            change.CName(textBox1, comboBox2, comboBox3,textBox4, textBox5, textBox6);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -312,11 +237,6 @@ namespace AIS_Driving_School_Driver_
             Hide();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string id_cpu_selected = Convert.ToString(comboBox1.SelectedValue);
-            change.GetList1(id_cpu_selected, label9);
-        }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {

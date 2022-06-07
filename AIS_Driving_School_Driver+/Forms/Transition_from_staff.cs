@@ -42,5 +42,12 @@ namespace AIS_Driving_School_Driver_
             form_back.Show();
             Hide();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            New_Staff new_Staff = new New_Staff();
+            new_Staff.Show();
+            Hide();
+        }
     }
 }

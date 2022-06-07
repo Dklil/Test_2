@@ -129,7 +129,7 @@ namespace AIS_Driving_School_Driver_
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].Visible = false;
             dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
+           
 
             dataGridView1.Columns[1].ReadOnly = true;
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -146,17 +146,11 @@ namespace AIS_Driving_School_Driver_
 
             dataGridView1.Columns[1].HeaderText = "ФИО";
 
-            if (Users_Role.role == "A")
+            
+            if (Users_Role.role == "U")
             {
                 functionToolStripMenuItem.Visible = false;
-
             }
-            else if (Users_Role.role == "U")
-            {
-                functionToolStripMenuItem.Visible = false;
-
-            }
-
 
         }
 
@@ -234,6 +228,11 @@ namespace AIS_Driving_School_Driver_
                     ras.dtgV2(dataGridView2, zapros);
                     break;
             }
+        }
+
+        private void functionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

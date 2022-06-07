@@ -69,6 +69,7 @@
             this.functionToolStripMenuItem.Name = "functionToolStripMenuItem";
             this.functionToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.functionToolStripMenuItem.Text = "Функции";
+            this.functionToolStripMenuItem.Click += new System.EventHandler(this.functionToolStripMenuItem_Click);
             // 
             // addToolStripMenuItem
             // 
@@ -86,7 +87,7 @@
             // 
             this.ivanovaMauiNikitignaToolStripMenuItem.Name = "ivanovaMauiNikitignaToolStripMenuItem";
             this.ivanovaMauiNikitignaToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.ivanovaMauiNikitignaToolStripMenuItem.Text = "Ivanova_Maui_Nikitigna";
+            this.ivanovaMauiNikitignaToolStripMenuItem.Text = "Иванова Майя Никитична";
             this.ivanovaMauiNikitignaToolStripMenuItem.Click += new System.EventHandler(this.ivanovaMauiNikitignaToolStripMenuItem_Click);
             // 
             // sumonovaElizovetaPetrovnaToolStripMenuItem

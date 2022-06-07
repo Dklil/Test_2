@@ -53,6 +53,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form12.Designer.cs">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test_dell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test_dell.Designer.cs">
+      <DependentUpon>test_dell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test_Forms\FForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Forms\FForm1.Designer.cs">
+      <DependentUpon>FForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test_Forms\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Forms\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test_Forms\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Forms\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test_Forms\Form67.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Forms\Form67.Designer.cs">
+      <DependentUpon>Form67.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Add_Schedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +100,12 @@
     </Compile>
     <Compile Include="Forms\Add_Weekly_schedule_Sumonova_Elizoveta_Petrovna.Designer.cs">
       <DependentUpon>Add_Weekly_schedule_Sumonova_Elizoveta_Petrovna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add_Weekly_Tutova_Vera_Cavelievna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_Weekly_Tutova_Vera_Cavelievna.Designer.cs">
+      <DependentUpon>Add_Weekly_Tutova_Vera_Cavelievna.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Authorization.cs">
       <SubType>Form</SubType>
@@ -113,6 +155,12 @@
     <Compile Include="Forms\Guide_Groups.Designer.cs">
       <DependentUpon>Guide_Groups.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test_Forms\New_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Forms\New_Staff.Designer.cs">
+      <DependentUpon>New_Staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,11 +172,11 @@
     <Compile Include="Forms\Schedule_by_teachers.Designer.cs">
       <DependentUpon>Schedule_by_teachers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Schedule.cs">
+    <Compile Include="Forms\Redirecting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Schedule.Designer.cs">
-      <DependentUpon>Schedule.cs</DependentUpon>
+    <Compile Include="Forms\Redirecting.Designer.cs">
+      <DependentUpon>Redirecting.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Groups.cs">
       <SubType>Form</SubType>
@@ -181,6 +229,36 @@
     <Compile Include="Forms\Add_Weekly_schedule_Ivanova_Maui_Nikitigna.Designer.cs">
       <DependentUpon>Add_Weekly_schedule_Ivanova_Maui_Nikitigna.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test_Forms\Test_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Forms\Test_Staff.Designer.cs">
+      <DependentUpon>Test_Staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test_reference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test_reference.Designer.cs">
+      <DependentUpon>test_reference.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form12.resx">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test_dell.resx">
+      <DependentUpon>test_dell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Forms\FForm1.resx">
+      <DependentUpon>FForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Forms\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Forms\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Forms\Form67.resx">
+      <DependentUpon>Form67.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Add_Schedule.resx">
       <DependentUpon>Add_Schedule.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Add_Weekly_schedule_Sumonova_Elizoveta_Petrovna.resx">
       <DependentUpon>Add_Weekly_schedule_Sumonova_Elizoveta_Petrovna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_Weekly_Tutova_Vera_Cavelievna.resx">
+      <DependentUpon>Add_Weekly_Tutova_Vera_Cavelievna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
@@ -217,8 +298,8 @@
     <EmbeddedResource Include="Forms\Schedule_by_teachers.resx">
       <DependentUpon>Schedule_by_teachers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Schedule.resx">
-      <DependentUpon>Schedule.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Redirecting.resx">
+      <DependentUpon>Redirecting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Groups.resx">
       <DependentUpon>Groups.cs</DependentUpon>
@@ -228,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Group_Change.resx">
       <DependentUpon>Group_Change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Forms\New_Staff.resx">
+      <DependentUpon>New_Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -245,6 +329,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Transition_from_staff.resx">
       <DependentUpon>Transition_from_staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Forms\Test_Staff.resx">
+      <DependentUpon>Test_Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test_reference.resx">
+      <DependentUpon>test_reference.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -280,6 +370,8 @@
   <ItemGroup>
     <None Include="Resources\Teachers.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\New_staff.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

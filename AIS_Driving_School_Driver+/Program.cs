@@ -27,7 +27,7 @@ namespace AIS_Driving_School_Driver_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Authorization());
+            Application.Run(new test
         }
     }
 }

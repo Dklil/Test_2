@@ -131,6 +131,8 @@ namespace AIS_Driving_School_Driver_
             dataGridView1.Columns[1].Visible = true;
             dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].Visible = false;
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
 
             dataGridView1.Columns[1].ReadOnly = true;
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

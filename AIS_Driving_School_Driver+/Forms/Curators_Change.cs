@@ -49,7 +49,7 @@ namespace AIS_Driving_School_Driver_
             {
                 string connStr = "server = chuc.caseum.ru; user = st_2_18_4; database = is_2_18_st4_VKR; password = 75855345; port = 33333";
                 MySqlConnection conn = new MySqlConnection(connStr);
-                string sql = "UPDATE Curators SET FIO= '" + textBox1.Text + "', Teacher= '" + comboBox1.Text + "', Cabinet= '" + comboBox2.Text + "', Adres = '" + textBox2.Text + "', Phone = '" + textBox3.Text + "', Mail = '" + textBox4.Text + "' WHERE id = " + lell.id;
+                string sql = "UPDATE Curators SET FIO= '" + textBox1.Text + "', Grups= '" + comboBox1.Text + "', Cabinet= '" + comboBox2.Text + "', Adres = '" + textBox2.Text + "', Phone = '" + textBox3.Text + "', Mail = '" + textBox4.Text + "' WHERE id = " + lell.id;
 
                 MySqlCommand comm = new MySqlCommand(sql, conn);
                 try
@@ -71,7 +71,7 @@ namespace AIS_Driving_School_Driver_
 
             }
 
-            // Заполнение combobox1 Преподаватель
+            // Заполнение combobox1 Группы
             public void GetComboBoxList1(ComboBox comboBox1)
             {
                 //Формирование списка статусов
@@ -83,16 +83,16 @@ namespace AIS_Driving_School_Driver_
                 conn.Open();
                 //Формируем столбцы для комбобокса списка 
 
-                list_dolg_table.Columns.Add(new DataColumn("FIO", System.Type.GetType("System.String")));
+                list_dolg_table.Columns.Add(new DataColumn("Name", System.Type.GetType("System.String")));
                 //Настройка видимости полей комбобокса
 
                 comboBox1.DataSource = list_dolg_table;
 
-                comboBox1.ValueMember = "FIO";
+                comboBox1.ValueMember = "Name";
 
 
                 //Формируется строка запроса на отображение списка 
-                string sql_list_users = "SELECT FIO FROM Teachers";
+                string sql_list_users = "SELECT Name FROM Grups";
                 list_dolg_command.CommandText = sql_list_users;
                 list_dolg_command.Connection = conn;
 
@@ -106,7 +106,7 @@ namespace AIS_Driving_School_Driver_
                     {
                         DataRow rowToAdd = list_dolg_table.NewRow();
 
-                        rowToAdd["FIO"] = reader_list_FIO[0].ToString();
+                        rowToAdd["Name"] = reader_list_FIO[0].ToString();
                         list_dolg_table.Rows.Add(rowToAdd);
                     }
                     reader_list_FIO.Close();
@@ -124,13 +124,13 @@ namespace AIS_Driving_School_Driver_
                 }
             }
 
-            // Заполнение combobox1 Преподаватель
+            // Заполнение combobox1 Группы
             public void GetList1(string id_cp, Label label7)
             {
                 //Открываем соединение
                 conn.Open();
                 //Строка запроса
-                string commandStr = "SELECT * FROM Teachers FIO";
+                string commandStr = "SELECT * FROM Grups Name";
                 //Команда для получения списка
                 MySqlCommand cmd_get_list = new MySqlCommand(commandStr, conn);
                 //Ридер для хранения списка строк
@@ -167,7 +167,7 @@ namespace AIS_Driving_School_Driver_
 
 
                 //Формируется строка запроса на отображение списка 
-                string sql_list_users = "SELECT Numbers FROM Teachers_Cabinet";
+                string sql_list_users = "SELECT Numbers FROM Curators_Cabinet";
                 list_dolg_command.CommandText = sql_list_users;
                 list_dolg_command.Connection = conn;
 
@@ -205,7 +205,7 @@ namespace AIS_Driving_School_Driver_
                 //Открываем соединение
                 conn.Open();
                 //Строка запроса
-                string commandStr = "SELECT * FROM Teachers_Cabinet Numbers";
+                string commandStr = "SELECT * FROM Curators_Cabinet Numbers";
                 //Команда для получения списка
                 MySqlCommand cmd_get_list = new MySqlCommand(commandStr, conn);
                 //Ридер для хранения списка строк

@@ -149,21 +149,14 @@ namespace AIS_Driving_School_Driver_
 
 
         }
-        // Удаление куратора
+        // Удаление куратора на кнопку 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Если пользоваетль вызвал контекстное меню и нажал кнопку удалить перед ним появится надпись о предупреждении в которой он выберет удалить информацию или нет
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить данную информацию?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-
-            // Если пользователь нажал в контекстном меню удалить появляется предупреждающие окно которое спрашивает уверен ли пользователь что хочут удалить информацию 
-            if (result == DialogResult.Yes)
-            {
-                index_selecet_rows = dataGridView1.SelectedCells[0].RowIndex.ToString();
-                id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selecet_rows)].Cells[0].Value.ToString();
-                Door.Removal(Convert.ToInt32(id_selected_rows));
-                conn.Close();
-                Door.read_list1();
-            }
+            index_selecet_rows = dataGridView1.SelectedCells[0].RowIndex.ToString();
+            id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selecet_rows)].Cells[0].Value.ToString();
+            Door.Removal(Convert.ToInt32(id_selected_rows));
+            conn.Close();
+            Door.read_list1();
         }
 
         private void Curators_Load(object sender, EventArgs e)
@@ -183,27 +176,23 @@ namespace AIS_Driving_School_Driver_
             dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             // Заполняет пустую ширину датагрида
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Уберает заголовки в датагриде
             dataGridView1.RowHeadersVisible = false;
             // Делает надписи из БД на русском
             dataGridView1.Columns[1].HeaderText = "ФИО";
-            dataGridView1.Columns[2].HeaderText = "Преподаватель";
+            dataGridView1.Columns[2].HeaderText = "Группа";
             dataGridView1.Columns[3].HeaderText = "Кабинет";
             dataGridView1.Columns[4].HeaderText = "Адрес";
             dataGridView1.Columns[5].HeaderText = "Телефон";
             dataGridView1.Columns[6].HeaderText = "Почта";
 
-            // Позволяет выбрать видимые элементы взависимости от роли       
-            if (Users_Role.role == "U")
-            {
-                functionToolStripMenuItem.Visible = false;
-            }
+            
             // Когда пользователь выбреает да или нет форма не сварачивается а остается на прждем месте
             this.TopMost = true;
         }

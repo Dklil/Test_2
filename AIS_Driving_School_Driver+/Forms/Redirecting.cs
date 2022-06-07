@@ -51,13 +51,17 @@ namespace AIS_Driving_School_Driver_
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Authorization exit = new Authorization();
-            exit.Show();
+            Authorization back_authorization = new Authorization();
+            back_authorization.Show();
+            // Если пользователь нажал на выход exit вместо true становится false это для авторизации чтобы при появлинни формы программа не считала его авторизированным  
+            Authorization.Pro.exit = false;
             Hide();
+
         }
 
         private void Schedule_Load(object sender, EventArgs e)
         {
+           
             if (Users_Role.role == "U")
             {
                 button1.Visible = false;
@@ -65,15 +69,19 @@ namespace AIS_Driving_School_Driver_
                 button2.Visible = false;
                 label2.Visible = false;
 
-                button3.Location = new Point(35, 38);
-                label3.Location = new Point(78, 197);
-                button4.Location = new Point(225, 38);
-                label4.Location = new Point(227, 197);
-                button5.Location = new Point(406, 38);
-                label5.Location = new Point(465, 197);
-                Size = new Size(617, 275);
+               
+                button4.Location = new Point(20, 12);
+                label4.Location = new Point(10, 171);
+                Size = new Size(215, 249);
 
             }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Authorization authorization = new Authorization();
+            authorization.Show();
+            Hide();
         }
     }
 }

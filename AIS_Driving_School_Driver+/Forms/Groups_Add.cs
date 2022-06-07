@@ -22,14 +22,14 @@ namespace AIS_Driving_School_Driver_
         class Dobavlenue
         {
             MySqlConnection conn = new MySqlConnection("server=chuc.caseum.ru;user=st_2_18_4;database=is_2_18_st4_VKR;password =75855345;port =33333");
-            public void Add_Function(TextBox textBox1, ComboBox comboBox1, ComboBox comboBox2)
+            public void Add_Function(TextBox textBox1, TextBox textBox2, ComboBox comboBox1, ComboBox comboBox2, ComboBox comboBox3)
             {
                 
                 conn.Open();
                 try
                 {
 
-                    string sql = "INSERT INTO Grups (Name,Kategoria, Teacher) VALUES ('" + textBox1.Text + "', '" + comboBox1.Text + "', '" + comboBox2.Text + "')";
+                    string sql = "INSERT INTO Grups (Name, Quantity, Rights, Curators, Teachers) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "', '" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + comboBox3.Text + "')";
                     MySqlCommand comm = new MySqlCommand(sql, conn);
                     comm.ExecuteNonQuery();
 
@@ -43,7 +43,7 @@ namespace AIS_Driving_School_Driver_
                 conn.Close();
             }
 
-            // Заполнение combobox1 категория
+            // Заполнение combobox1 Категория
             public void GetComboBoxList1(ComboBox comboBox1)
             {
                 //Формирование списка статусов
@@ -85,9 +85,6 @@ namespace AIS_Driving_School_Driver_
                     conn.Close();
                 }
 
-
-
-
                 catch (Exception ex)
                 {
                     MessageBox.Show("Ошибка \n\n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,7 +96,7 @@ namespace AIS_Driving_School_Driver_
                 }
             }
 
-            // Заполнение combobox1 категория
+            // Заполнение combobox1 Категория
             public void GetList1(string id_cp, Label label4)
             {
                 //Открываем соединение
@@ -121,7 +118,7 @@ namespace AIS_Driving_School_Driver_
                 conn.Close();
             }
 
-            // Заполнение combobox2 преподаватели
+            // Заполнение combobox2 Кураторы
             public void GetComboBoxList2(ComboBox comboBox2)
             {
                 //Формирование списка статусов
@@ -139,6 +136,82 @@ namespace AIS_Driving_School_Driver_
                 comboBox2.DataSource = list_dolg_table;
 
                 comboBox2.ValueMember = "FIO";
+
+
+                //Формируется строка запроса на отображение списка 
+                string sql_list_users = "SELECT FIO FROM Curators";
+                list_dolg_command.CommandText = sql_list_users;
+                list_dolg_command.Connection = conn;
+
+
+                MySqlDataReader reader_list_FIO;
+                try
+                {
+                    reader_list_FIO = list_dolg_command.ExecuteReader();
+
+                    while (reader_list_FIO.Read())
+                    {
+                        DataRow rowToAdd = list_dolg_table.NewRow();
+
+                        rowToAdd["FIO"] = reader_list_FIO[0].ToString();
+                        list_dolg_table.Rows.Add(rowToAdd);
+                    }
+                    reader_list_FIO.Close();
+                    conn.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка \n\n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+
+            // Заполнение combobox2 Кураторы
+            public void GetList2(string id_cp, Label label4)
+            {
+                //Открываем соединение
+                conn.Open();
+                //Строка запроса
+                string commandStr = "SELECT * FROM Curators FIO";
+                //Команда для получения списка
+                MySqlCommand cmd_get_list = new MySqlCommand(commandStr, conn);
+                //Ридер для хранения списка строк
+                MySqlDataReader reader_list = cmd_get_list.ExecuteReader();
+                //Читаем ридер
+
+                while (reader_list.Read())
+                {
+                    label4.Text.Length.ToString(" " + reader_list[0].ToString());
+
+                }
+                reader_list.Close();
+                conn.Close();
+            }
+
+            // Заполнение combobox2 Преподаватели
+            public void GetComboBoxList3(ComboBox comboBox3)
+            {
+                //Формирование списка статусов
+                DataTable list_dolg_table = new DataTable();
+
+                MySqlCommand list_dolg_command = new MySqlCommand();
+
+                //Открываем соединение
+                conn.Open();
+                //Формируем столбцы для комбобокса списка 
+
+                list_dolg_table.Columns.Add(new DataColumn("FIO", System.Type.GetType("System.String")));
+                //Настройка видимости полей комбобокса
+
+                comboBox3.DataSource = list_dolg_table;
+
+                comboBox3.ValueMember = "FIO";
 
 
                 //Формируется строка запроса на отображение списка 
@@ -163,9 +236,6 @@ namespace AIS_Driving_School_Driver_
                     conn.Close();
                 }
 
-
-
-
                 catch (Exception ex)
                 {
                     MessageBox.Show("Ошибка \n\n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -178,8 +248,8 @@ namespace AIS_Driving_School_Driver_
             }
 
 
-            // Заполнение combobox2 преподаватели
-            public void GetList2(string id_cp, Label label4)
+            // Заполнение combobox2 Преподаватели
+            public void GetList3(string id_cp, Label label4)
             {
                 //Открываем соединение
                 conn.Open();
@@ -204,7 +274,7 @@ namespace AIS_Driving_School_Driver_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dobavlenue_inf.Add_Function(textBox1, comboBox1, comboBox2);
+            dobavlenue_inf.Add_Function(textBox1, textBox2, comboBox1, comboBox2, comboBox3);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -226,10 +296,19 @@ namespace AIS_Driving_School_Driver_
             dobavlenue_inf.GetList2(id_cpu_selected, label4);
         }
 
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id_cpu_selected = Convert.ToString(comboBox3.SelectedValue);
+            dobavlenue_inf.GetList3(id_cpu_selected, label4);
+        }
+
         private void Groups_Add_Load(object sender, EventArgs e)
         {
             dobavlenue_inf.GetComboBoxList1(comboBox1);
             dobavlenue_inf.GetComboBoxList2(comboBox2);
+            dobavlenue_inf.GetComboBoxList3(comboBox3);
         }
+
+         
     }
 }

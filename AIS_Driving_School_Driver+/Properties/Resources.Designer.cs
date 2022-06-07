@@ -103,6 +103,16 @@ namespace AIS_Driving_School_Driver_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap New_staff {
+            get {
+                object obj = ResourceManager.GetObject("New_staff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Schedule_teachers {
             get {
                 object obj = ResourceManager.GetObject("Schedule_teachers", resourceCulture);

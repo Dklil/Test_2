@@ -55,8 +55,6 @@ namespace AIS_Driving_School_Driver_
                     Door.Removal(Convert.ToInt32(id_selected_rows));
                     conn.Close();
                     Door.read_list1();
-
-
                 }
             }
         }
@@ -133,25 +131,27 @@ namespace AIS_Driving_School_Driver_
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 
+            // Ширина изменяется так, чтобы вместить содержимое всех ячеек
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             // Заполняет пустую ширину датагрида
-            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Уберает заголовки в датагриде
             dataGridView1.RowHeadersVisible = false;
 
             dataGridView1.Columns[1].HeaderText = "Наименование";
-            dataGridView1.Columns[2].HeaderText = "Категория";
-            dataGridView1.Columns[3].HeaderText = "Преподаватель";
+            dataGridView1.Columns[2].HeaderText = "Количество";
+            dataGridView1.Columns[3].HeaderText = "Категория";
+            dataGridView1.Columns[4].HeaderText = "Преподаватель";
+            dataGridView1.Columns[5].HeaderText = "Куратор";
 
-            if (Users_Role.role == "A")
-            {
-                teacherToolStripMenuItem.Visible = false;
-            }
-
+           
             // Когда пользователь выбреает да или нет форма не сварачивается а остается на прждем месте
             this.TopMost = true;
 
@@ -178,20 +178,7 @@ namespace AIS_Driving_School_Driver_
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Если пользоваетль вызвал контекстное меню и нажал кнопку удалить перед ним появится надпись о предупреждении в которой он выберет удалить информацию или нет
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить данную информацию?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-
-            // Если пользователь нажал в контекстном меню удалить появляется предупреждающие окно которое спрашивает уверен ли пользователь что хочут удалить информацию 
-            if (result == DialogResult.Yes)
-            {
-                index_selecet_rows = dataGridView1.SelectedCells[0].RowIndex.ToString();
-                id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selecet_rows)].Cells[0].Value.ToString();
-                Door.Removal(Convert.ToInt32(id_selected_rows));
-                conn.Close();
-                Door.read_list1();
-
-
-            }
+            
         }
 
         private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
